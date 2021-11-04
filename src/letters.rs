@@ -8,7 +8,7 @@ pub fn letter() {
     io::stdin().read_line(&mut word).expect("Failed to read line.");
     let mut map = HashMap::new();
 
-    for letter in word.chars() {
+    for letter in word.trim().chars() {
         let count = map.entry(letter).or_insert(0);
         *count += 1;
     }
